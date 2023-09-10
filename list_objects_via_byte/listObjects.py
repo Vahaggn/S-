@@ -2,12 +2,13 @@ import subprocess
 
 bucket_name = "EXAMPLE" #Write your Bucket name
 base_path = "FOLDER1/FOLDER2" #Write your object path
+less_than = "1" #Less than which size you want to get the list
 
 #if in following path you have different folders you can use following for loop if not just skip it
 
 for pattern_number in range(1, 10):
     pattern = f"{pattern_number}"  # Creates pattern like PATTERN001, PATTERN002, ...
-    s3cmd_command = f"s3cmd --config=/app/s3cfg ls s3://{bucket_name}/{base_path}/{pattern}/ | awk '$3 < 1'"
+    s3cmd_command = f"s3cmd --config=/app/s3cfg ls s3://{bucket_name}/{base_path}/{pattern}/ | awk '$3 < {less_than}'"
 
     try:
         file_path = "output.txt"  
