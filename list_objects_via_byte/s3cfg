@@ -1,0 +1,13 @@
+[default]
+
+# Login credentials
+
+access_key = 
+
+secret_key = 
+
+host_base = 
+
+host_bucket = 
+
+use_https = True
